@@ -1,5 +1,10 @@
 const user = {
+  age: 12,
+};
+
+const newUser = {
+  ...user,
   name: 'John Smith',
 };
 
-console.log(user.name);
+console.log(newUser.name);
