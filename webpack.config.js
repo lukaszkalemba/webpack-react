@@ -1,3 +1,5 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
@@ -7,6 +9,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.s?css/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -15,7 +26,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [new MiniCssExtractPlugin()],
   devServer: {
     contentBase: './dist',
+    hot: true,
   },
 };
