@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import webpack from '../images/webpack.png';
 
 const elvenShieldRecipe = {
   leatherStrips: 2,
@@ -17,12 +18,12 @@ const Recipes = () => {
 
   return (
     <div>
+      <img src={webpack} alt='' width='100' />
       <h3>Current Recipe:</h3>
       <button onClick={() => setRecipe(elvenShieldRecipe)}>Elven Shield</button>
       <button onClick={() => setRecipe(elvenGauntletsRecipe)}>
         Elven Gauntlets
       </button>
-
       <ul>
         {Object.keys(recipe).map((material) => (
           <li key={material}>
