@@ -1,10 +1,9 @@
-import Recipes from './components/Recipes';
+import Hero from './components/hero/Hero';
 
 const App = () => {
   return (
     <>
-      <section className='hero'></section>
-      <Recipes />
+      <Hero />
     </>
   );
 };
